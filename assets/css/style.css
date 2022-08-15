@@ -5,31 +5,157 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
+  
 header {
     text-align: center;
     border: dashed rgb(20, 20, 20);
     font-size: 45px;
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(120, 0, 0);
-
-   
+    background-color: rgb(120, 0, 0); 
 }
+
 nav {
     background-color: maroon;
     padding-left: 20%;
     text-align: justify;
 }
+
 ul {
     padding-right: 30%
 }
+
 article {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    
     padding-top: 10%;
 }
 
 .tabs-content.carousel .carousel-item { 
     height:auto; 
+}
+
+.control-panel {
+    background-color: maroon;
+    text-align: justify;
+    display: block;
+    padding-left: 0%;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.genre-control, .release-control {
+    width: 100%;
+}
+
+.search-bar {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: white;
+    width: 100%;
+}
+
+.search-container{
+    width:100%;
+}
+
+.generate-btn-container {
+    padding-left:45%;
+    background-color: maroon;
+}
+
+.tabs-content.carousel .carousel-item { 
+    height:auto; 
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: maroon;
+}
+
+.card-container {
+    width: 40%;
+    justify-content: center;
+    margin-left: 60px;
+
+}
+
+.card-image {
+    width: 100%;
+    object-fit:contain;
+    padding: 10%;
+}
+
+.card-text {
+    position: relative;
+    color: white;
+    bottom: 50px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+}
+
+.recently-viewed {
+    background-color: maroon;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.rv-header {
+    width: 100%;
+}
+
+.rv-header h3 {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.rv-item {
+    width: 15%;
+    padding-left: 10px;
+}
+
+.rv-item img {
+    object-fit:contain;
+    width: 100%;
+}
+
+.rv-item-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hide {
+    display: none;
+}
+
+
+.title-page-container {
+    background-color: maroon;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-panel {
+    width: 65%;
+    padding: 0 5%;
+}
+
+.right-panel {
+    width: 35%;
+}
+
+.poster-display {
+    object-fit:contain;
+    width: 100%;
 }

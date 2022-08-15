@@ -8,6 +8,8 @@ $(".dropdown-trigger").dropdown();
 //materialize suggested this code for dropdown//
 
 
+
+
 //https://github.com/Dogfalo/materialize/issues/4148
 //from CiccaGuru
 $(function(){
@@ -21,3 +23,9 @@ function resizeTab(){
   });
   $(".tabs-content").css('height',maxHeight+'px');
 }
+
+//materialize template for carousel -- recently viewed
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+
