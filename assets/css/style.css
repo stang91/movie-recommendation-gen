@@ -5,18 +5,35 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
-
+  
 header {
     text-align: center;
     border: dashed rgb(20, 20, 20);
     font-size: 45px;
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(120, 0, 0);
-   
+    background-color: rgb(120, 0, 0); 
 }
 
+nav {
+    background-color: maroon;
+    padding-left: 20%;
+    text-align: justify;
+}
 
+ul {
+    padding-right: 30%
+}
+
+article {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 10%;
+}
+
+.tabs-content.carousel .carousel-item { 
+    height:auto; 
+}
 
 .control-panel {
     background-color: maroon;
@@ -40,7 +57,6 @@ header {
     font-size: 17px;
     background-color: white;
     width: 100%;
-
 }
 
 .search-container{
@@ -50,12 +66,6 @@ header {
 .generate-btn-container {
     padding-left:45%;
     background-color: maroon;
-}
-
-article {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding-top: 10%;
 }
 
 .tabs-content.carousel .carousel-item { 
@@ -80,7 +90,6 @@ article {
     width: 100%;
     object-fit:contain;
     padding: 10%;
-
 }
 
 .card-text {
@@ -150,6 +159,3 @@ article {
     object-fit:contain;
     width: 100%;
 }
-
-
-
