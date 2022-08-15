@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+       <div class="container">
+            <ul class="tabs">
+                <li class="tab col">
+                    <a class="homeTab" href="#home">Home</a>
+                </li>
+                <li class="tab col hide">
+                    <a class="movieTab" href="#movieTitle">movie Title</a>
+                </li>
+            </ul>
+            <div class="homePage col s12" id="home">
+                <header>Flick Genie</header>
+                <!-- Dropdown Structure -->
+                <!--movie genres-->
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">three</a></li>
+                </ul>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo">Pick your preffered genre!</a>
+                        <ul class="right hide-on-med-and-down">
+                            <!-- Dropdown Trigger -->
+                            <li>
+                                <!-- need to fix dropdown issue-->
+                                <a class="dropdown-trigger font-30px" href="#!" data-target="dropdown1">
+                                    Genres
+                                    <iclass="material-icons right">*</iclass=>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--these are the cards  for movies-->
+                <article class="row align-items-stretch, center justify-content-start card-deck" id="movieDisplay">
+                    <aside>
+                    
+                        <div class="row">
+                            <div class="col s12 m12 ">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="">
+                                        <span class="card-title">Card Title</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>I am a very simple card. I am good at containing small bits of information.
+                                            I am convenient because I require little markup to use effectively.</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="#">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="row">
+                        <div class="col s12 m12 ">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="">
+                                    <span class="card-title">Card Title</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>I am a very simple card. I am good at containing small bits of information.
+                                        I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <section>
+                    <div class="col s12 m7">
+                        <h2 class="header">Horizontal Card</h2>
+                        <div class="card horizontal">
+                            <div class="card-image">
+                                <img src="">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>Info.</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">This is a link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--card for description of card hovered over-->
+                </section>
+                <footer>
+                    <!--pagination-->
+                </footer>
+            </div>
+            <div class="movieTitlePage col s12" id="movieTitle">
+                <!--navbar-->
+            </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
