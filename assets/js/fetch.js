@@ -13,8 +13,6 @@ $('.generate-btn').click(function(){
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
 
-
-
     fetch(requestNYTimesURL, {
         method: 'GET',
     })
@@ -51,7 +49,6 @@ $('.generate-btn').click(function(){
 
     });
 });
-
 
 
 // create drop down menu as user types 
@@ -105,7 +102,5 @@ function generateDropdown () {
     });
 
 }
-
-
 
 

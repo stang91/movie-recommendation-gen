@@ -1,9 +1,20 @@
 html {
-    background: url(https://media.istockphoto.com/photos/cinema-movie-theatre-with-red-seats-rows-and-a-black-background-picture-id1269677658?k=20&m=1269677658&s=612x612&w=0&h=e4SrlDftj-U-J9f4uzfHobwXDRbIpXpwaf7j8fD7bvk=) no-repeat center center fixed;
+    background: url(https://media.istockphoto.com/photos/cinema-movie-theatre-with-red-seats-rows-and-a-black-background-picture-id1269677658?k=20&m=1269677658&s=612x612&w=0&h=e4SrlDftj-U-J9f4uzfHobwXDRbIpXpwaf7j8fD7bvk=) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+  
+body {
+    margin: auto;
+}
+
+.search-container {
+    width: 357px;
+  margin: 4px auto;
+  text-align: center;
+  display: inline-block;
 }
 
 header {
@@ -12,7 +23,7 @@ header {
     font-size: 45px;
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(120, 0, 0);
+    background-color: rgb(120, 0, 0); 
 }
 
 .control-panel {
@@ -24,8 +35,7 @@ header {
     text-align: center;
 }
 
-.genre-control,
-.release-control {
+.genre-control, .release-control {
     width: 100%;
 }
 
@@ -88,6 +98,23 @@ article {
 
 .tabs-content.carousel .carousel-item {
     height: auto;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: white;
+    width: 100%;
+}
+
+.search-container{
+    width:100%;
+}
+
+.generate-btn-container {
+    padding-left:45%;
+    background-color: maroon;
+}
+
+.tabs-content.carousel .carousel-item { 
+    height:auto; 
 }
 
 .card-deck {
@@ -101,14 +128,12 @@ article {
     width: 40%;
     justify-content: center;
     margin-left: 60px;
-
 }
 
 .card-image {
     width: 100%;
     object-fit: contain;
     padding: 10%;
-
 }
 
 .card-text {

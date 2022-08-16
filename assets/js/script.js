@@ -24,12 +24,6 @@ function resizeTab(){
   $(".tabs-content").css('height',maxHeight+'px');
 }
 
-
-//materialize template for carousel -- recently viewed
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
-
 //materialize template for carousel -- recently viewed
 $(document).ready(function(){
   $('.carousel').carousel();
