@@ -9,6 +9,7 @@ $(".dropdown-trigger").dropdown();
 
 
 
+
 //https://github.com/Dogfalo/materialize/issues/4148
 //from CiccaGuru
 $(function(){
@@ -23,6 +24,11 @@ function resizeTab(){
   $(".tabs-content").css('height',maxHeight+'px');
 }
 
+
+//materialize template for carousel -- recently viewed
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
 
 //materialize template for carousel -- recently viewed
 $(document).ready(function(){

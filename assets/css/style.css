@@ -13,10 +13,7 @@ header {
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgb(120, 0, 0);
-   
 }
-
-
 
 .control-panel {
     background-color: maroon;
@@ -150,6 +147,5 @@ article {
     object-fit:contain;
     width: 100%;
 }
-
 
 
