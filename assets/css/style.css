@@ -1,10 +1,10 @@
-html { 
-    background: url(https://media.istockphoto.com/photos/cinema-movie-theatre-with-red-seats-rows-and-a-black-background-picture-id1269677658?k=20&m=1269677658&s=612x612&w=0&h=e4SrlDftj-U-J9f4uzfHobwXDRbIpXpwaf7j8fD7bvk=) no-repeat center center fixed; 
+html {
+    background: url(https://media.istockphoto.com/photos/cinema-movie-theatre-with-red-seats-rows-and-a-black-background-picture-id1269677658?k=20&m=1269677658&s=612x612&w=0&h=e4SrlDftj-U-J9f4uzfHobwXDRbIpXpwaf7j8fD7bvk=) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+}
 
 header {
     text-align: center;
@@ -24,7 +24,8 @@ header {
     text-align: center;
 }
 
-.genre-control, .release-control {
+.genre-control,
+.release-control {
     width: 100%;
 }
 
@@ -33,19 +34,49 @@ header {
     padding: 6px;
     border: none;
     margin-top: 8px;
-    margin-right: 16px;
     font-size: 17px;
     background-color: white;
     width: 100%;
 
 }
 
-.search-container{
-    width:100%;
+.search-container {
+    width: 100%;
 }
 
+.drop-down {
+    position: absolute;
+    top: 260px;
+    width: 100%;
+}
+
+.drop-down-item {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+}
+
+.drop-down-item:hover {
+    background-color: azure;
+    cursor: grab;
+}
+
+.drop-down-item p {
+    padding-left: 30px;
+    width: 40%;
+}
+
+.drop-down-item img {
+    height: 100%;
+    padding-right: 50px;
+}
+
+
+
 .generate-btn-container {
-    padding-left:45%;
+    padding-left: 45%;
     background-color: maroon;
 }
 
@@ -55,8 +86,8 @@ article {
     padding-top: 10%;
 }
 
-.tabs-content.carousel .carousel-item { 
-    height:auto; 
+.tabs-content.carousel .carousel-item {
+    height: auto;
 }
 
 .card-deck {
@@ -75,7 +106,7 @@ article {
 
 .card-image {
     width: 100%;
-    object-fit:contain;
+    object-fit: contain;
     padding: 10%;
 
 }
@@ -112,7 +143,7 @@ article {
 }
 
 .rv-item img {
-    object-fit:contain;
+    object-fit: contain;
     width: 100%;
 }
 
@@ -144,8 +175,6 @@ article {
 }
 
 .poster-display {
-    object-fit:contain;
+    object-fit: contain;
     width: 100%;
 }
-
-

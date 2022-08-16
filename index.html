@@ -57,22 +57,30 @@
                     </div>
 
                     <!-- search bar -->
-                    <div class="row search-container">
+                    <!-- <div class="row search-container">
                         <div class="col s12">
-                            <div class="row">
+                            <div class="row"> -->
                                 <div class="search-bar input-field col s12">
-                                    <input type="text" id="autocomplete-input" class="autocomplete search-bar-input">
-                                    <label for="autocomplete-input">Search for directors/actors....</label>
+                                    <input type="text" id="autocomplete-input" data-target="search-dropdown" class="autocomplete search-bar-input">
+                                    <label for="autocomplete-input">Type in your favorite movie to generate</label>
                                 </div>
-                            </div>
+
+                                <ul id="search-dropdown" class="drop-down hide">
+                                    <li class="drop-down-item">
+                                        <p>title</p>
+                                        <p>Release Date</p>
+                                        <img src="https://image.tmdb.org/t/p/w500/pnK24nc7EuYEmozCeIGXfKZdMIi.jpg" img>
+                                    </li>
+                                </ul>
+                            <!-- </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- generate button -->
-                <div class="generate-btn-container">
+                <!-- <div class="generate-btn-container">
                     <a class="btn waves-effect waves-teal generate-btn">Generate</a>
-                </div>
+                </div> -->
 
                 <!------Generated Movie Cards------>
                 <div class="card-deck">
