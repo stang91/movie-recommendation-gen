@@ -5,7 +5,15 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
-  
+body {
+    margin: auto;
+}
+.search-container {
+    width: 357px;
+  margin: 4px auto;
+  text-align: center;
+  display: inline-block;
+}
 header {
     text-align: center;
     border: dashed rgb(20, 20, 20);
