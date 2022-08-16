@@ -5,15 +5,18 @@ html {
     -o-background-size: cover;
     background-size: cover;
   }
+  
 body {
     margin: auto;
 }
+
 .search-container {
     width: 357px;
   margin: 4px auto;
   text-align: center;
   display: inline-block;
 }
+
 header {
     text-align: center;
     border: dashed rgb(20, 20, 20);
@@ -21,26 +24,6 @@ header {
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgb(120, 0, 0); 
-}
-
-nav {
-    background-color: maroon;
-    padding-left: 20%;
-    text-align: justify;
-}
-
-ul {
-    padding-right: 30%
-}
-
-article {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding-top: 10%;
-}
-
-.tabs-content.carousel .carousel-item { 
-    height:auto; 
 }
 
 .control-panel {
@@ -61,6 +44,60 @@ article {
     padding: 6px;
     border: none;
     margin-top: 8px;
+    font-size: 17px;
+    background-color: white;
+    width: 100%;
+
+}
+
+.search-container {
+    width: 100%;
+}
+
+.drop-down {
+    position: absolute;
+    top: 260px;
+    width: 100%;
+}
+
+.drop-down-item {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+}
+
+.drop-down-item:hover {
+    background-color: azure;
+    cursor: grab;
+}
+
+.drop-down-item p {
+    padding-left: 30px;
+    width: 40%;
+}
+
+.drop-down-item img {
+    height: 100%;
+    padding-right: 50px;
+}
+
+
+
+.generate-btn-container {
+    padding-left: 45%;
+    background-color: maroon;
+}
+
+article {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 10%;
+}
+
+.tabs-content.carousel .carousel-item {
+    height: auto;
     margin-right: 16px;
     font-size: 17px;
     background-color: white;
@@ -95,7 +132,7 @@ article {
 
 .card-image {
     width: 100%;
-    object-fit:contain;
+    object-fit: contain;
     padding: 10%;
 }
 
@@ -131,7 +168,7 @@ article {
 }
 
 .rv-item img {
-    object-fit:contain;
+    object-fit: contain;
     width: 100%;
 }
 
@@ -163,6 +200,6 @@ article {
 }
 
 .poster-display {
-    object-fit:contain;
+    object-fit: contain;
     width: 100%;
 }
