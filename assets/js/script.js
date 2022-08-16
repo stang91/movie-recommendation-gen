@@ -28,4 +28,3 @@ function resizeTab(){
 $(document).ready(function(){
   $('.carousel').carousel();
 });
-
