@@ -113,10 +113,6 @@ article {
     background-color: maroon;
 }
 
-.tabs-content.carousel .carousel-item { 
-    height:auto; 
-}
-
 .card-deck {
     display: flex;
     flex-wrap: wrap;
@@ -202,4 +198,26 @@ article {
 .poster-display {
     object-fit: contain;
     width: 100%;
+}
+
+nav, h1 {
+    background-color: maroon;
+    padding-left: 20%;
+    text-align: justify;
+}
+
+ul {
+    padding-right: 30%
+}
+
+.logo{
+    width:100%;
+    border:black dashed;
+}
+.homePage, .movieTitlePage{
+    width: 100%;
+}
+
+.logo-header{
+    height: 2rem;
 }
