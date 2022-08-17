@@ -8,15 +8,16 @@
     <title>Movie Recommendation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/SPA.js" async></script>
 </head>
 
 <body onload="getPageContent('home')">
     <div class="container">
         <nav class="nav">
-            <a href="#" class="brand-logo nav-link" onclick="getPageContent('home')"><img src="./assets/images/LogoFlickGenie.png" class="logo-header"></a>
+            <a href="#home" class="brand-logo nav-link" onclick="getPageContent('home')"><img src="./assets/images/LogoFlickGenie.png" class="logo-header"></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#" class="nav-link" onclick="getPageContent('movie')">Movie Recommendation</a></li>
-                <li><a href="#" class="nav-link" onclick="getPageContent('about')">About</a></li>
+                <li><a href="#movie" class="nav-link" onclick="getPageContent('movie')">Movie Recommendation</a></li>
+                <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>
             </ul>
         </nav>
         <div id="content"></div>
@@ -25,7 +26,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/js/SPA.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fetch.js"></script>
     
