@@ -54,7 +54,10 @@ var pages = {
             </div>
         </div> 
     `,
-    'about' : `<h1>Our About Us</h1>`,
+    'about' : `
+        <h1>Our About Us</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum temporibus nemo necessitatibus rerum itaque distinctio ea molestiae amet deserunt tempore corporis, magni debitis possimus? Necessitatibus eius ullam saepe officiis laboriosam!</p>
+    `,
     'movie' : `
         <h1>Movie</h1>
         <div class="movieTitlePage col s12" id="movieTitle">
