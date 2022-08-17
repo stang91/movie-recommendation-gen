@@ -1,4 +1,5 @@
 function getHome(){
+    $(document).prop("title","Home | Flick Genie")
     $("#content").empty();
     $("#content").append(
         //logo image
