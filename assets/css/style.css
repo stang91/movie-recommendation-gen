@@ -84,12 +84,6 @@ header {
 }
 
 
-
-.generate-btn-container {
-    padding-left: 45%;
-    background-color: maroon;
-}
-
 article {
     display: grid;
     grid-template-columns: auto auto auto auto;

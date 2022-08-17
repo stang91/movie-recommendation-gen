@@ -1,59 +1,4 @@
 var pages = {
-    'home' : `
-        <div><img src="./assets/images/logo.png" alt="logoname" class="logo"></div>
-
-        <div class="homePage col s12" id="home">
-            <!------Control Panel-------->
-            <div class="control-panel">
-                <!-- search bar -->
-                <div class="search-bar input-field col s12">
-                    <input type="text" id="autocomplete-input" data-target="search-dropdown" class="autocomplete search-bar-input">
-                    <label for="autocomplete-input">Type in your favorite movie to generate</label>
-                </div>
-            </div>
-            <ul id="search-dropdown" class="drop-down hide">
-                <li class="drop-down-item">
-                    <p>title</p>
-                    <p>Release Date</p>
-                    <img src="https://image.tmdb.org/t/p/w500/pnK24nc7EuYEmozCeIGXfKZdMIi.jpg" img>
-                </li>
-            </ul>
-            <!------Generated Movie Cards------>
-            <div class="card-deck">
-                <!-- these will be dynamically generated, tag class list card-container and card-image for respective parent/child elements -->
-                <div class="card-container">
-                    <img class="card-image" src="https://via.placeholder.com/686x1016">
-                    <p class="card-text">movie title</p>
-                </div>
-                <div class="card-container">
-                    <img class="card-image" src="https://via.placeholder.com/686x1016">
-                    <p class="card-text">movie title</p>
-                </div>
-                <div class="card-container">
-                    <img class="card-image" src="https://via.placeholder.com/686x1016">
-                    <p class="card-text">movie title</p>
-                </div>
-                <div class="card-container">
-                    <img class="card-image" src="https://via.placeholder.com/686x1016">
-                    <p class="card-text">movie title</p>
-                </div>
-            </div>
-
-
-            <!-- Recently Viewed -->
-            <div class="recently-viewed">
-                <div class="rv-header">
-                    <h3>Recently Viewed</h3>
-                </div class="rv-item-container">
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-            </div>
-        </div> 
-    `,
     'about' : `
         <h1>Our About Us</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum temporibus nemo necessitatibus rerum itaque distinctio ea molestiae amet deserunt tempore corporis, magni debitis possimus? Necessitatibus eius ullam saepe officiis laboriosam!</p>
@@ -98,6 +43,26 @@ var pages = {
                 </div>
             </div>
         </div>
+        <!------Generated Movie Cards------>
+            <div class="card-deck">
+                <!-- these will be dynamically generated, tag class list card-container and card-image for respective parent/child elements -->
+                <div class="card-container">
+                    <img class="card-image" src="https://via.placeholder.com/686x1016">
+                    <p class="card-text">movie title</p>
+                </div>
+                <div class="card-container">
+                    <img class="card-image" src="https://via.placeholder.com/686x1016">
+                    <p class="card-text">movie title</p>
+                </div>
+                <div class="card-container">
+                    <img class="card-image" src="https://via.placeholder.com/686x1016">
+                    <p class="card-text">movie title</p>
+                </div>
+                <div class="card-container">
+                    <img class="card-image" src="https://via.placeholder.com/686x1016">
+                    <p class="card-text">movie title</p>
+                </div>
+            </div>
     `,
 };
 
