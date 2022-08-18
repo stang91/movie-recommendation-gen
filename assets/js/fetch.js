@@ -47,4 +47,12 @@ $('.generate-btn').click(function(){
         // 'https://api.themoviedb.org/3/genre/movie/list?api_key='+themoviedbAPIKey;
 
     });
+
+    // if (localStorage.clickcount) {
+    //     localStorage.clickcount = Number(localStorage.clickcount) + 1;
+    //   } else {
+    //     localStorage.clickcount = 1;
+    //   }
+    //   document.getElementById("result").innerHTML = "You have clicked the button " +
+    //   localStorage.clickcount + " time(s).";
 });
