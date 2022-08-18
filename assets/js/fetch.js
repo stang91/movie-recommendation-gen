@@ -22,7 +22,7 @@ $('.generate-btn').click(function(){
         return response.json();
     })
     .then(function (data) {
-        // localStorage.setItem('NYTimes-'+movieTitle,JSON.stringify(data));
+        localStorage.setItem('NYTimes-'+movieTitle,JSON.stringify(data));
         console.log(data);
     });
     
@@ -33,7 +33,7 @@ $('.generate-btn').click(function(){
         return response.json();
     })
     .then(function (data) {
-        // localStorage.setItem('OMDB-'+movieTitle,JSON.stringify(data));
+        localStorage.setItem('OMDB-'+movieTitle,JSON.stringify(data));
         console.log(data);
     });
     
@@ -44,10 +44,10 @@ $('.generate-btn').click(function(){
         return response.json();
     })
     .then(function (data) {
-        // localStorage.setItem('themoviedb-'+movieTitle,JSON.stringify(data));
+         localStorage.setItem('themoviedb-'+movieTitle,JSON.stringify(data));
         console.log(data);
-        // 'https://image.tmdb.org/t/p/w500/'+posterImg;
-        // 'https://api.themoviedb.org/3/genre/movie/list?api_key='+themoviedbAPIKey;
+        'https://image.tmdb.org/t/p/w500/'+posterImg;
+        'https://api.themoviedb.org/3/genre/movie/list?api_key='+themoviedbAPIKey;
 
     });
 });
