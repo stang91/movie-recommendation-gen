@@ -30,7 +30,7 @@ $('.generate-btn').click(function(){
         return response.json();
     })
     .then(function (data) {
-        // localStorage.setItem('OMDB-'+movieTitle,JSON.stringify(data));
+        // localStorage.setItem('OMDB-'+movieTitle,JSON.stringify(data));0
         console.log(data);
     });
     
