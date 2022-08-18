@@ -77,7 +77,7 @@ function getHome(event) {
                 searchDropdownEl.innerHTML = '';
                 searchDropdownEl.classList.remove("hide");
 
-                // for the autocomplete parameters of this materialize element, for the data attribute, it has to be a JSON not string. We also don't need this because it only contains two attributes, the title and the poster link, formatted in JSON. Can't use this to pass movie_ID
+                // This piece is not working. We also don't need it. 
                 // if (data.results.length){
                 // for (i = 0; i < data.results.length; i++) {
                 //     $('input.autocomplete').autocomplete({
