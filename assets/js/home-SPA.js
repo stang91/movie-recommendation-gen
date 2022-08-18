@@ -74,20 +74,22 @@ function getHome(event) {
                 searchDropdownEl.innerHTML = '';
                 searchDropdownEl.classList.remove("hide");
 
-                for (i = 0; i < data.results.length; i++) {
-                    $('input.autocomplete').autocomplete({
-                        data: data.results[i].original_title,
-                        limit: 5,
-                        minLength: 4
-                    });
-                }
+                // if (data.results.length){
+                // for (i = 0; i < data.results.length; i++) {
+                //     $('input.autocomplete').autocomplete({
+                //         data: data.results[i].original_title,
+                //         limit: 5,
+                //         minLength: 4
+                //     });
+                // }}
 
                 if (searchBarEl.value) {
 
                     for (i = 0; i < 5; i++) {
                         var dropDownItem = document.createElement("li");
                         dropDownItem.classList.add("drop-down-item");
-                        dropDownItem.setAttribute("data-ID", data.results[i].id);
+                        dropDownItem.setAttribute("data-ID", data.results[i].id)
+                        dropDownItem.setAttribute("data-title", data.results[i].original_title);
                         var title = document.createElement("p");
                         var poster = document.createElement("img");
                         var releaseDate = document.createElement("p");
@@ -118,8 +120,9 @@ function getHome(event) {
         movieID = event.target.parentElement.getAttribute("data-ID");
         console.log(movieID);
         searchDropdownEl.classList.add("hide");
+        searchBarEl.value = event.target.parentElement.getAttribute("data-title")
         getRec(movieID, event);
-        return movieID, event;
+        return movieID, event, searchBarEl.value;
     }
 
     getRec(movieID, event)

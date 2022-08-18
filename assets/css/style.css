@@ -118,12 +118,20 @@ article {
     width: 40%;
     justify-content: center;
     margin-left: 60px;
+    transition: transform ease 300ms;
+
 }
 
 .card-image {
     width: 100%;
     object-fit: contain;
     padding: 10%;
+}
+
+.card-container:hover {
+    border: 3px solid white;
+    cursor:pointer;
+    transform: translate(0, -10px);
 }
 
 .card-text {
