@@ -19,11 +19,11 @@ function getHome(){
                     //input
                     $("<input>").attr({
                         "type":"text",
-                        "id":"autocomplete-input",
+                        "id":"autocomplete-input noActive",
                         "data-target":"search-dropdown",
                         "class":"autocomplete search-bar-input"
                     }),
-                    $("<label>Type in your favorite movie to generate</label>").attr("for","autocomplete-input"),
+                    $("<label class='black-text'>Type in your favorite movie to generate</label>").attr("for","autocomplete-input"),
                     ))),
         //generate btn
         $("<div></div").attr({
@@ -97,3 +97,4 @@ function getHome(){
         });
     }
 }
+

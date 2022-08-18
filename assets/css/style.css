@@ -25,6 +25,11 @@ header {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgba(120, 0, 0, 0.123); 
 }
+
+input:focus-visible {
+    /* display:none !important; */
+}
+
 .generate-btn {
     background-color: rgb(158, 25, 25);
     text-shadow: 15%;
