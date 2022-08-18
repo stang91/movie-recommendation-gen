@@ -1,4 +1,4 @@
-function getHome() {
+function getHome(event) {
     $(document).prop("title", "Home | Flick Genie");
     $("#content").empty();
     $("#content").append(
@@ -30,7 +30,7 @@ function getHome() {
         $("<div></div").attr({
             "class": "generate-btn-container",
             "data-id": "generate-btn-container",
-            // "onclick": "generateDropdown()"
+            "onclick": "getRec(movieID, event)"
         }).append($("<a>generate</a>").attr("class", "btn waves-effect waves-teal generate-btn")),
         //dropdown
         $("<ul></ul>").attr({
@@ -56,6 +56,8 @@ function getHome() {
     var searchBarEl = document.querySelector(".search-bar-input");
     searchBarEl.addEventListener("keydown", generateDropdown);
 
+    var searchDropdownEl = document.getElementById("search-dropdown");
+
     function generateDropdown() {
         var movieTitle = searchBarEl.value;
         var requestThemoviedbURL = 'https://api.themoviedb.org/3/search/movie?api_key=' + themoviedbAPIKey + '&query=' + movieTitle;
@@ -69,7 +71,6 @@ function getHome() {
             .then(function (data) {
 
                 // console.log(data);
-                var searchDropdownEl = document.getElementById("search-dropdown");
                 searchDropdownEl.innerHTML = '';
                 searchDropdownEl.classList.remove("hide");
 
@@ -81,7 +82,7 @@ function getHome() {
                     });
                 }
 
-                if (searchBarEl.value !== "") {
+                if (searchBarEl.value) {
 
                     for (i = 0; i < 5; i++) {
                         var dropDownItem = document.createElement("li");
@@ -101,55 +102,84 @@ function getHome() {
                         dropDownItem.append(title, releaseDate, poster);
                         searchDropdownEl.append(dropDownItem);
 
-                        title.addEventListener("click", getRec)
-                        releaseDate.addEventListener("click", getRec)
-                        poster.addEventListener("click", getRec)
-
-                        function getRec(event) {
-
-                            movieID = event.target.parentElement.getAttribute("data-ID");
-                            console.log(movieID);
-                            searchDropdownEl.classList.add("hide");
+                        title.addEventListener("click", getMovieID)
+                        releaseDate.addEventListener("click", getMovieID)
+                        poster.addEventListener("click", getMovieID)
 
 
-                            var cardDeckEl = document.querySelector(".card-deck")
-                            cardDeckEl.innerHTML = '';
-
-                            var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey
-                            fetch(movieDBRecURL, {
-                                method: 'GET',
-                            })
-                                .then(function (response) {
-                                    return response.json();
-                                })
-                                .then(function (data) {
-
-                                    var randomBank = [];
-
-                                    for (i = 0; i < 4; i++) {
-                                        var randomIndex = Math.floor(Math.random() * data.results.length);
-                                        if (randomBank.includes(randomIndex)) {
-                                            i--;
-                                        } else {
-                                            randomBank.push(randomIndex);
-                                            var posterDisplay = document.createElement("div");
-                                            posterDisplay.classList.add("card-container");
-                                            posterDisplay.innerHTML = "<img class='card-image' data-title='" + data.results[randomIndex].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomIndex].poster_path + "> <p class='card-text'>" + data.results[randomIndex].title + "<p>"
-                                            posterDisplay.setAttribute("data-ID", data.results[randomIndex].id)
-                                            posterDisplay.setAttribute("data-title", data.results[randomIndex].title)
-                                            cardDeckEl.append(posterDisplay);
-
-                                            posterDisplay.addEventListener("click", generateMovie);
-                                        }
-                                    }
-
-
-                                })
-
-
-                        }
                     }
                 }
             })
     }
+
+
+
+    function getMovieID(event) {
+        movieID = event.target.parentElement.getAttribute("data-ID");
+        console.log(movieID);
+        searchDropdownEl.classList.add("hide");
+        getRec(movieID, event);
+        return movieID, event;
+    }
+
+    getRec(movieID, event)
+
+}
+var movieID
+var randomBank = [];
+
+
+function getRec(movieID, event) {
+
+    // console.log(event.target.classList.contains("home-btn"))    
+    var cardDeckEl = document.querySelector(".card-deck")
+    cardDeckEl.innerHTML = '';
+
+    var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey
+    fetch(movieDBRecURL, {
+        method: 'GET',
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            if (event.target.classList.contains("home-btn")) { generateCards(data) } else {
+                getRandomIndex(data)
+                generateCards(data)
+            };
+
+            function generateCards(data) { }
+            for (i = 0; i < 4; i++) {
+                randomBank.push(randomBank[i]);
+                var posterDisplay = document.createElement("div");
+                posterDisplay.classList.add("card-container");
+                posterDisplay.innerHTML = "<img class='card-image' data-title='" + data.results[randomBank[i]].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomBank[i]].poster_path + "> <p class='card-text'>" + data.results[randomBank[i]].title + "<p>"
+                posterDisplay.setAttribute("data-ID", data.results[randomBank[i]].id)
+                posterDisplay.setAttribute("data-title", data.results[randomBank[i]].title)
+                cardDeckEl.append(posterDisplay);
+
+                posterDisplay.addEventListener("click", generateMovie);
+
+            }
+
+
+            return randomBank
+        })
+
+
+}
+
+function getRandomIndex(data) {
+    randomBank = [];
+    for (i = 0; i < 4; i++) {
+        var randomIndex = Math.floor(Math.random() * data.results.length);
+        if (randomBank.includes(randomIndex)) {
+            i--;
+        } else {
+            randomBank.push(randomIndex);
+        }
+    }
+
+    return randomBank;
 }
