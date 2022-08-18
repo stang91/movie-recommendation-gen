@@ -48,7 +48,7 @@ function getHome(){
     searchBarEl.addEventListener("keydown", generateDropdown);
 
     function generateDropdown () {
-        var movieTitle = searchBarEl.value;
+        var movieTitle = searchBarEl.value; //problem here
         var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
         
         fetch(requestThemoviedbURL, {
@@ -64,7 +64,7 @@ function getHome(){
             searchDropdownEl.classList.remove("hide");
             for(i=0;i<data.results.length;i++){
                 $('input.autocomplete').autocomplete({
-                    data: data.results[i].original_title,
+                    data: data.results[i].original_title,  //problem here
                     limit: 5,
                     minLength: 4
                   });
