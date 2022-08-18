@@ -28,3 +28,9 @@ function resizeTab(){
 $(document).ready(function(){
   $('.carousel').carousel();
 });
+
+// nav slidebar
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+

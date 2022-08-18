@@ -84,12 +84,6 @@ header {
 }
 
 
-
-.generate-btn-container {
-    padding-left: 45%;
-    background-color: maroon;
-}
-
 article {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -111,10 +105,6 @@ article {
 .generate-btn-container {
     padding-left:45%;
     background-color: maroon;
-}
-
-.tabs-content.carousel .carousel-item { 
-    height:auto; 
 }
 
 .card-deck {
@@ -202,4 +192,26 @@ article {
 .poster-display {
     object-fit: contain;
     width: 100%;
+}
+
+nav, h1 {
+    background-color: maroon;
+    padding-left: 20%;
+    text-align: justify;
+}
+
+ul {
+    padding-right: 30%
+}
+
+.logo{
+    width:100%;
+    border:black dashed;
+}
+.homePage, .movieTitlePage{
+    width: 100%;
+}
+
+.logo-header{
+    height: 2rem;
 }

@@ -5,181 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Recommendation</title>
+    <title>Flick Gene</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body onload="getHome()">
     <div class="container">
-        <ul class="tabs">
-            <li class="tab col">
-                <a class="homeTab" href="#home">Home</a>
-            </li>
-            <li class="tab col hide">
-                <a class="movieTab" href="#movieTitle">movie Title</a>
-            </li>
+        <nav class="nav-wraper">
+            <a href="#home" class="brand-logo nav-link" onclick="getHome()"><img src="./assets/images/LogoFlickGenie.png" class="logo-header"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>    
+            </ul>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>
         </ul>
-        <div class="homePage col s12" id="home">
-            <!-- <div class="hide"> -->
-                <header>Flick Genie</header>
-                <!------Control Panel-------->
-                <div class="control-panel">
-
-                    <!--movie genres-->
-                    <div class="genre-control">
-                        <ul>
-                            <!-- Dropdown Trigger -->
-                            <li><a class="dropdown-trigger font-30px" href="#!" data-target="dropdown1"> Genres</a></li>
-                        </ul>
-                        <!-- Dropdown Menu -->
-                        <ul id="dropdown1" class="dropdown-content">
-                            <li><a href="#!">Drama</a></li>
-                            <li><a href="#!">Thriller</a></li>
-                            <li><a href="#!">Horror</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- release date -->
-                    <div class="release-control">
-                        <ul>
-                            <!-- Dropdown Trigger -->
-                            <li><a class="dropdown-trigger font-30px" href="#!" data-target="dropdown2"> Release
-                                    Date</a>
-                            </li>
-                        </ul>
-                        <!-- Dropdown Menu -->
-                        <ul id="dropdown2" class="dropdown-content">
-                            <li><a href="#!">1950</a></li>
-                            <li><a href="#!">1960</a></li>
-                            <li><a href="#!">1970</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- search bar -->
-                    <!-- <div class="row search-container">
-                        <div class="col s12">
-                            <div class="row"> -->
-                                <div class="search-bar input-field col s12">
-                                    <input type="text" id="autocomplete-input" data-target="search-dropdown" class="autocomplete search-bar-input">
-                                    <label for="autocomplete-input">Type in your favorite movie to generate</label>
-                                </div>
-
-                                <ul id="search-dropdown" class="drop-down hide">
-                                    <li class="drop-down-item">
-                                        <p>title</p>
-                                        <p>Release Date</p>
-                                        <img src="https://image.tmdb.org/t/p/w500/pnK24nc7EuYEmozCeIGXfKZdMIi.jpg" img>
-                                    </li>
-                                </ul>
-                            <!-- </div>
-                        </div>
-                    </div> -->
-                </div>
-
-                <!-- generate button -->
-                <!-- <div class="generate-btn-container">
-                    <a class="btn waves-effect waves-teal generate-btn">Generate</a>
-                </div> -->
-
-                <!------Generated Movie Cards------>
-                <div class="card-deck">
-                    <!-- these will be dynamically generated, tag class list card-container and card-image for respective parent/child elements -->
-                    <div class="card-container">
-                        <img class="card-image" src="https://via.placeholder.com/686x1016">
-                        <p class="card-text">movie title</p>
-                    </div>
-
-                    <div class="card-container">
-                        <img class="card-image" src="https://via.placeholder.com/686x1016">
-                        <p class="card-text">movie title</p>
-
-                    </div>
-
-                    <div class="card-container">
-                        <img class="card-image" src="https://via.placeholder.com/686x1016">
-                        <p class="card-text">movie title</p>
-                    </div>
-
-                    <div class="card-container">
-                        <img class="card-image" src="https://via.placeholder.com/686x1016">
-                        <p class="card-text">movie title</p>
-                    </div>
-
-                </div>
-
-
-                <!-- Recently Viewed -->
-
-                <div class="recently-viewed">
-                    <div class="rv-header">
-                        <h3>Recently Viewed</h3>
-                    </div class="rv-item-container">
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-                    <div class="rv-item"><img src="https://via.placeholder.com/686x1016"></div>
-
-                </div>
-
-                <footer>
-                    <!--pagination-->
-                </footer>
-            </div>
-
-            
-        <!-- </div> -->
-
-
-
-        <div class="movieTitlePage col s12" id="movieTitle">
-            <div class="title-page-container">
-                <div class="left-panel">
-                    <h1>title</h1>
-
-                    <div class="imdb-rating">
-                        <p>IMDB Score: 5/10</p>
-                    </div>
-
-                    <div class="release-date">
-                        <p>2018</p>
-                    </div>
-
-                    <div class="description">
-                        <div class="genre">
-                            <p>Genre: Genre</p>
-                        </div>
-
-                        <div class="cast">
-                            <p>Cast: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, rem.</p>
-                        </div>
-
-                        <div class="synopsis">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut aliquid totam laborum
-                                veritatis
-                                sapiente eum, ea sit. Numquam tenetur perferendis, molestias eius cum minima ut fugit
-                                debitis
-                                consequatur explicabo officiis?</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="right-panel">
-                    <img class="poster-display" src="https://via.placeholder.com/686x1016">
-                </div>
-            </div>
-        </div>
+        <div id="content"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/home-SPA.js"></script>
+    <script src="./assets/js/movie-SPA.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/fetch.js"></script>
 
 </body>
-
 </html>
