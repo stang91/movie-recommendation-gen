@@ -1,5 +1,6 @@
-function generateMovie (){
-    var movieTitle=$('.search-bar-input').val().toLowerCase().split(' ').join('+');
+function generateMovie (event){
+
+    var movieTitle = event.target.getAttribute("data-title");
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
