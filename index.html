@@ -15,12 +15,13 @@
     <div class="container">
         <nav class="nav-wraper">
             <a href="#home" class="brand-logo nav-link" onclick="getHome()"><img src="./assets/images/LogoFlickGenie.png" class="logo-header"></a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a href="#" data-target="mobile-slide" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>    
             </ul>
         </nav>
-        <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav" id="mobile-slide">
+            <li><a href="#home" class="nav-link" onclick="getHome()">Home</a></li>
             <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>
         </ul>
         <div id="content"></div>

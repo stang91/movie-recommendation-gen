@@ -1,4 +1,4 @@
-function getHome(){
+function getHome(event){
     $(document).prop("title","Home | Flick Genie");
     $("#content").empty();
     $("#content").append(
@@ -7,8 +7,8 @@ function getHome(){
             $("<img>").attr({
                 "src":"./assets/images/logo.png",
                  "alt":"logoname",
-                 "class":"logo"})
-        ),
+                 "class":"logo"
+        })),
         //search bar
         $("<div></div>").attr({
             "class":"homePage col s12",
@@ -24,9 +24,9 @@ function getHome(){
                         "class":"autocomplete search-bar-input"
                     }),
                     $("<label>Type in your favorite movie to generate</label>").attr("for","autocomplete-input"),
-                    ))),
+        ))),
         //generate btn
-        $("<div></div").attr({
+        $("<div></div>").attr({
             "class":"generate-btn-container",
             "onclick":"generateMovie()"
         }).append($("<a>generate</a>").attr("class","btn waves-effect waves-teal generate-btn")),
@@ -44,7 +44,10 @@ function getHome(){
                     "src":"https://via.placeholder.com/686x1016"
                 })
     )));
+
+//shu's code
     var searchBarEl = document.querySelector(".search-bar-input");
+    //keydown limiter
     searchBarEl.addEventListener("keydown", generateDropdown);
 
     function generateDropdown () {
@@ -60,17 +63,13 @@ function getHome(){
         .then(function (data) {
             console.log(data);
             var searchDropdownEl = document.getElementById("search-dropdown");
+            
             searchDropdownEl.innerHTML = '';
             searchDropdownEl.classList.remove("hide");
-            for(i=0;i<data.results.length;i++){
-                $('input.autocomplete').autocomplete({
-                    data: data.results[i].original_title,
-                    limit: 5,
-                    minLength: 4
-                  });
-            }
+
             if (searchBarEl.value !== "") {
                 for (i=0; i<5; i++) {
+                    //if results boolean
                     var dropDownItem = document.createElement("li");
                     dropDownItem.classList.add("drop-down-item");
                     dropDownItem.setAttribute("data-ID", data.results[i].id);
