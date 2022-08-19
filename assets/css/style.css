@@ -80,7 +80,7 @@ a:hover {
 
 .drop-down {
     position: absolute;
-    top: 260px;
+    top: 400px;
     width: 100%;
 }
 
@@ -142,6 +142,8 @@ article {
     width: 40%;
     justify-content: center;
     margin-left: 60px;
+    transition: transform ease 300ms;
+
 }
 
 .card-image {
@@ -150,13 +152,19 @@ article {
     padding: 10%;
 }
 
+.card-container:hover {
+    border: 3px solid white;
+    cursor:pointer;
+    transform: translate(0, -10px);
+}
+
 .card-text {
     position: relative;
     color: white;
     bottom: 50px;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .recently-viewed {
