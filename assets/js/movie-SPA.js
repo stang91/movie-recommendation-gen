@@ -1,5 +1,6 @@
-async function generateMovie (event){
-    var movieTitle=$('.search-bar-input').val().toLowerCase().split(' ').join('+');
+function generateMovie (event){
+    //if we want to rework this section using movie_ID from theMOVIEDB, it can be found on the data-title attribute on the poster container $(".card-container")
+    var movieTitle = event.target.getAttribute("data-title");
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
