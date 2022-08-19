@@ -164,6 +164,7 @@ function getRec(movieID, event) {
     }
     return randomBank;
     });
+
 }
 
 function getRandomIndex(data) {
