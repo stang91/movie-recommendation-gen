@@ -62,6 +62,7 @@ function getHome(event) {
 
     searchBarEl.addEventListener("keydown", generateDropdown);
 
+
     function generateDropdown() {
         var movieTitle = searchBarEl.value;
         var requestThemoviedbURL = 'https://api.themoviedb.org/3/search/movie?api_key=' + themoviedbAPIKey + '&query=' + movieTitle;
@@ -189,6 +190,7 @@ function getRandomIndex(data) {
             randomBank.push(randomIndex);
         }
     }
+
 
     return randomBank;
 }

@@ -23,9 +23,28 @@ header {
     font-size: 45px;
     padding-bottom: 5%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(120, 0, 0); 
+    background-color: rgba(120, 0, 0, 0.123); 
 }
 
+input:focus-visible {
+    /* display:none !important; */
+}
+
+.generate-btn {
+    background-color: rgb(158, 25, 25);
+    text-shadow: 15%;
+    border-style: groove;
+}
+a:hover {
+    color: rgb(244, 245, 241);
+    border-color: black;
+    border-style: double;
+  }
+.generate-btn:hover {
+    background-color: rgba(43, 1, 1, 0.473);
+    
+}
+  
 .control-panel {
     background-color: maroon;
     text-align: justify;
@@ -33,6 +52,11 @@ header {
     padding-left: 0%;
     padding-top: 10px;
     text-align: center;
+}
+
+.search-bar-input ::after {
+    color: black;
+    border: dashed black;
 }
 
 .genre-control, .release-control {
