@@ -138,6 +138,7 @@ function getRec(movieID, event) {
 
     var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey;
 
+    if (movieID) {
     fetch(movieDBRecURL, {
         method: 'GET',
     })
@@ -146,11 +147,11 @@ function getRec(movieID, event) {
         })
         .then(function (data) {
             //when generating recommendation, if home button was clicked, we keep the same random Index effectively loading the same posters generated before
-            if (event.target.classList.contains("home-btn")) { generateCards(data) }
+            if (event) { if (event.target.classList.contains("home-btn")) { generateCards(data) }
             else {
-                getRandomIndex(data);
-                generateCards(data);
-            };
+                getRandomIndex(data)
+                generateCards(data)
+            }};
 
             function generateCards(data) {
                 for (i = 0; i < 4; i++) {
@@ -169,7 +170,7 @@ function getRec(movieID, event) {
 
 
             return randomBank;
-        })
+        })}
 
 
 }
