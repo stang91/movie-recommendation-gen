@@ -14,10 +14,11 @@
 <body onload="getHome()">
     <div class="container">
         <nav class="nav-wraper">
-            <a href="#home" class="brand-logo nav-link" onclick="getHome(event)"><img src="./assets/images/LogoFlickGenie.png" class="logo-header home-btn"></a>
+            <a href="#home" class="brand-logo nav-link" onclick="getHome(event)"><img
+                    src="./assets/images/LogoFlickGenie.png" class="logo-header home-btn"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>    
+                <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>
             </ul>
         </nav>
         <ul class="sidenav" id="mobile-slide">
@@ -25,9 +26,25 @@
             <li><a href="#about" class="nav-link" onclick="getPageContent('about')">About</a></li>
         </ul>
         <div id="content"></div>
+        <div class="slider fuse">
+            <h2 id="slider-header">
+                Previously Viewed Films
+            </h2>
+            <!-- tmp hard coded slide -->
+            <div class="slide">
+                <img src="https://source.unsplash.com/random?landscape,mountain" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://source.unsplash.com/random?landscape,cars" alt="" />
+            </div>
+
+            <button class="btn btn-next fish">&gt;</button>
+            <button class="btn btn-prev fish">&lt;</button>
+        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/home-SPA.js"></script>
     <script src="./assets/js/movie-SPA.js"></script>
@@ -35,4 +52,5 @@
     <script src="./assets/js/fetch.js"></script>
 
 </body>
+
 </html>
