@@ -4,7 +4,7 @@ function generateMovie (event){
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
-    await fetch(requestThemoviedbURL, {
+     fetch(requestThemoviedbURL, {
         method: 'GET',
     })
     .then(function (response) {
