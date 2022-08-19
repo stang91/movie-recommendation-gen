@@ -81,44 +81,35 @@ function getHome(event) {
                 // console.log(data);
                 searchDropdownEl.innerHTML = '';
                 searchDropdownEl.classList.remove("hide");
-
-                // This piece is not working. We also don't need it. 
-                // if (data.results.length){
-                // for (i = 0; i < data.results.length; i++) {
-                //     $('input.autocomplete').autocomplete({
-                //         data: data.results[i].original_title,
-                //         limit: 5,
-                //         minLength: 4
-                //     });
-                // }}
-
-                if (searchBarEl.value) {
-
-                    for (i = 0; i < 5; i++) {
-                        var dropDownItem = document.createElement("li");
-                        dropDownItem.classList.add("drop-down-item");
-                        dropDownItem.setAttribute("data-ID", data.results[i].id);
-                        dropDownItem.setAttribute("data-title", data.results[i].original_title);
-
-                        var title = document.createElement("p");
-                        title.textContent = data.results[i].original_title;
-
-                        var releaseDate = document.createElement("p");
-                        releaseDate.textContent = data.results[i].release_date.substring(0, 4);
-
-                        var poster = document.createElement("img");
-                        if (data.results[i].poster_path) {
-                            poster.setAttribute("src", 'https://image.tmdb.org/t/p/w500' + data.results[i].poster_path);
+                if (data.results.length!=0){ 
+                    if (searchBarEl.value) {
+    
+                        for (i = 0; i < 5; i++) {
+                            var dropDownItem = document.createElement("li");
+                            dropDownItem.classList.add("drop-down-item");
+                            dropDownItem.setAttribute("data-ID", data.results[i].id);
+                            dropDownItem.setAttribute("data-title", data.results[i].original_title);
+    
+                            var title = document.createElement("p");
+                            title.textContent = data.results[i].original_title;
+    
+                            var releaseDate = document.createElement("p");
+                            releaseDate.textContent = data.results[i].release_date.substring(0, 4);
+    
+                            var poster = document.createElement("img");
+                            if (data.results[i].poster_path) {
+                                poster.setAttribute("src", 'https://image.tmdb.org/t/p/w500' + data.results[i].poster_path);
+                            }
+    
+                            dropDownItem.append(title, releaseDate, poster);
+                            searchDropdownEl.append(dropDownItem);
+    
+                            title.addEventListener("click", getMovieID)
+                            releaseDate.addEventListener("click", getMovieID)
+                            poster.addEventListener("click", getMovieID)
                         }
-
-                        dropDownItem.append(title, releaseDate, poster);
-                        searchDropdownEl.append(dropDownItem);
-
-                        title.addEventListener("click", getMovieID)
-                        releaseDate.addEventListener("click", getMovieID)
-                        poster.addEventListener("click", getMovieID)
                     }
-                }
+                }else{return null}
             })
     }
 
@@ -142,10 +133,10 @@ function getHome(event) {
 function getRec(movieID, event) {
 
     // console.log(event.target.classList.contains("home-btn"))    
-    var cardDeckEl = document.querySelector(".card-deck")
+    var cardDeckEl = document.querySelector(".card-deck");
     cardDeckEl.innerHTML = '';
 
-    var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey
+    var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey;
 
     if (movieID) {
     fetch(movieDBRecURL, {
