@@ -48,6 +48,25 @@ $('.generate-btn').click(function(){
         console.log(data);
         // 'https://image.tmdb.org/t/p/w500/'+posterImg;
         // 'https://api.themoviedb.org/3/genre/movie/list?api_key='+themoviedbAPIKey;
+        for (var i=0;i<data.results.length;i++){
+            
+            var moiveID=data.results[i].id;
+            var requestThemoviedbURL2="https://api.themoviedb.org/3/movie/"+moiveID+"?api_key="+themoviedbAPIKey+"&append_to_response=videos,images,credits,reviews";
 
+            fetch(requestThemoviedbURL2, {
+                method: 'GET',
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // localStorage.setItem('themoviedb-'+movieTitle,JSON.stringify(data));
+                console.log(data);
+                // 'https://image.tmdb.org/t/p/w500/'+posterImg;
+                // 'https://api.themoviedb.org/3/genre/movie/list?api_key='+themoviedbAPIKey;
+            
+            });
+        };
     });
+    
 });

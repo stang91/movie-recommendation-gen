@@ -41,7 +41,7 @@ function getPageContent(page){
             break;
         default:
             contentToReturn = pages.home;
-            break;				
+            break;			
     }
     document.getElementById('content').innerHTML = contentToReturn; 
 }
