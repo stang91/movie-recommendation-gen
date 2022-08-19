@@ -3,8 +3,10 @@ $(document).ready(function(){
     swipeable: true,
     responsiveThreshold: Infinity 
   });
+  $('.sidenav').sidenav();
+  $(".dropdown-trigger").dropdown();
+  $('.carousel').carousel();
 });
-$(".dropdown-trigger").dropdown();
 //materialize suggested this code for dropdown//
 
 
@@ -24,15 +26,7 @@ function resizeTab(){
   $(".tabs-content").css('height',maxHeight+'px');
 }
 
-//materialize template for carousel -- recently viewed
-$(document).ready(function(){
-  $('.carousel').carousel();
-});
 
-// nav slidebar
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-});
 
 // function myFunction(e) {
 //   if (document.querySelector('#noActive a.active') !== null) {
