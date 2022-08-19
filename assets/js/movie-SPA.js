@@ -4,7 +4,7 @@ function generateMovie (event){
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
-    await fetch(requestThemoviedbURL, {
+    fetch(requestThemoviedbURL, {
         method: 'GET',
     })
     .then(function (response) {
@@ -12,8 +12,8 @@ function generateMovie (event){
     })
     .then(function (data0) {
         if(data0.results.length!=null){
-            var movieID=data0.results[0].id;
-            var requestThemoviedbURL2="https://api.themoviedb.org/3/movie/"+movieID+"?api_key="+themoviedbAPIKey+"&append_to_response=videos,images,credits,reviews";
+            var movieID2=data0.results[0].id;
+            var requestThemoviedbURL2="https://api.themoviedb.org/3/movie/"+movieID2+"?api_key="+themoviedbAPIKey+"&append_to_response=videos,images,credits,reviews";
             fetch(requestThemoviedbURL2, {
                 method: 'GET',
             })
