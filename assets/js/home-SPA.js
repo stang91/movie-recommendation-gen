@@ -158,7 +158,8 @@ function getRec(movieID, event) {
                     randomBank.push(randomBank[i]);
                     var posterDisplay = document.createElement("div");
                     posterDisplay.classList.add("card-container");
-                    posterDisplay.innerHTML = "<img class='card-image' data-title='" + data.results[randomBank[i]].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomBank[i]].poster_path + "> <p class='card-text'>" + data.results[randomBank[i]].title + "<p>"
+                    var urlText = data.results[randomBank[i]].title.replaceAll(" ", "-")
+                    posterDisplay.innerHTML = "<a href='#"+ urlText +"'> <img class='card-image' data-title='" + data.results[randomBank[i]].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomBank[i]].poster_path + "></a> <p class='card-text'>" + data.results[randomBank[i]].title + "<p>"
                     posterDisplay.setAttribute("data-ID", data.results[randomBank[i]].id)
                     posterDisplay.setAttribute("data-title", data.results[randomBank[i]].title)
                     cardDeckEl.append(posterDisplay);
