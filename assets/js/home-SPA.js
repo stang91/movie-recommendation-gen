@@ -13,7 +13,8 @@ function getHome(event) {
                 "class": "logo"
             })
         ),
-        //search bar
+
+     //search bar
         $("<div></div>").attr({
             "class": "homePage col s12",
             "id": "home"
@@ -27,6 +28,7 @@ function getHome(event) {
                         "data-target": "search-dropdown",
                         "class": "autocomplete search-bar-input"
                     }),
+
                     $("<label>Type in your favorite movie to generate</label>").attr("for", "autocomplete-input"),
                 ))),
         //generate btn
@@ -55,7 +57,9 @@ function getHome(event) {
                     "class": "rv-item",
                     "src": "https://via.placeholder.com/686x1016"
                 })
+
             )));
+//shu's code
 
     var searchBarEl = document.querySelector(".search-bar-input");
     var searchDropdownEl = document.getElementById("search-dropdown");
@@ -150,7 +154,6 @@ function getRec(movieID, event) {
             return response.json();
         })
         .then(function (data) {
-
             //when generating recommendation, if home button was clicked, we keep the same random Index effectively loading the same posters generated before
             if (event.target.classList.contains("home-btn")) { generateCards(data) }
             else {
