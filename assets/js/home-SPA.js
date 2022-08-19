@@ -23,13 +23,16 @@ function getHome(){
                         "data-target":"search-dropdown",
                         "class":"autocomplete search-bar-input"
                     }),
-                    $("<label class='black-text'>Type in your favorite movie to generate</label>").attr("for","autocomplete-input"),
+                    $("<label class='black-text '>Type in your favorite movie to generate</label>").attr("for","autocomplete-input"),
                     ))),
         //generate btn
         $("<div></div").attr({
             "class":"generate-btn-container",
+            
+        }).append($("<a>generate</a>").attr({
+            "class":"btn waves-effect waves-teal generate-btn",
             "onclick":"generateMovie()"
-        }).append($("<a>generate</a>").attr("class","btn waves-effect waves-teal generate-btn")),
+        })),
         //dropdown
         $("<ul></ul>").attr({
             "id":"search-dropdown",
