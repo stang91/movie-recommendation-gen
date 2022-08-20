@@ -31,6 +31,7 @@ header {
     background-color: rgb(158, 25, 25);
     text-shadow: 15%;
     border-style: groove;
+    position: inherit;
     
 }
 a:hover {
@@ -88,6 +89,8 @@ a:hover {
     height: 50px;
     width: 100%;
     background-color: white;
+    position: relative;
+    top: 25px;
 }
 
 .drop-down-item:hover {
@@ -244,4 +247,8 @@ ul {
 
 .logo-header{
     height: 2rem;
+}
+
+.generate-btn{
+    position: inherit;
 }
