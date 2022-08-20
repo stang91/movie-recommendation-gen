@@ -126,9 +126,7 @@ function generateMovie (event){
                     return response.json();
                 })
                 .then(function (data2) {
-                    // localStorage.setItem('OMDB-'+movieTitle,JSON.stringify(data2));
                     var title1=JSON.parse(localStorage.getItem('themoviedb-'+data2.Title)).title;
-                    console.log(data2);
                     if(title1===data2.Title){
                         $(".detail-container").prepend(
                             $("<p>IMDB Score: "+data2.imdbRating+"</p>").attr("class","imdb-rating"),
@@ -148,8 +146,6 @@ function generateMovie (event){
                         return response.json();
                     })
                     .then(function (data3) {
-                        // localStorage.setItem('NYTimes-'+movieTitle,JSON.stringify(data));
-                        console.log(data3);
                         if(data3.results.length!=null){
                             for(i=0;i<data3.results.length;i++){
                                 var title1=JSON.parse(localStorage.getItem('themoviedb-'+data3.results[i].display_title)).title;

@@ -19,8 +19,12 @@ function getHome(event) {
             "class": "homePage col s12",
             "id": "home"
         }).append(
-            $("<div></div>").attr("class", "control-panel").append(
-                $("<div></div>").attr("class", "search-bar input-field col s12").append(
+            $("<div></div>").attr({
+                "class": "control-panel"
+            }).append(
+                $("<div></div>").attr({
+                    "class": "search-bar input-field col s12"
+                }).append(
                     //input
                     $("<input>").attr({
                         "type": "text",
@@ -29,8 +33,12 @@ function getHome(event) {
                         "class": "autocomplete search-bar-input"
                     }),
 
-                    $("<label>Type in your favorite movie to generate</label>").attr("for", "autocomplete-input"),
-                ))),
+                    $("<label>Type in your favorite movie to generate</label>").attr({
+                        "for": "autocomplete-input"
+                    }),
+                )
+            )
+        ),
         //generate btn
         $("<div></div").attr({
             "class": "generate-btn-container",
@@ -44,23 +52,39 @@ function getHome(event) {
         $("<ul></ul>").attr({
             "id": "search-dropdown",
             "class": "drop-down hide"
-        }).append($("<li></li>").attr("class", "drop-down-item")),
+        }).append($("<li></li>").attr({
+            "class": "drop-down-item"
+        })),
 
         //recommended posters
         $("<div></div>").attr({
             "class": "card-deck"
         }),
 
-        //recent viewed
-        $("<div></div>").attr("class", "recently-viewed").append(
+    );
+    //recent view
+    $("#content").append(
+        $("<div></div>").attr({
+            "class": "carousel recently-viewed",
+        }).append(
             $("<h3>Recently Viewed</h3>"),
-            $("<div></div>").attr("class", "rv-item-container").append(
-                $("<img>").attr({
-                    "class": "rv-item",
-                    "src": "https://via.placeholder.com/686x1016"
-                })
+            $("<div></div>").attr("class", "rv-item-container")
+        )
+   );
+   for(var i=0;i<localStorage.length;i++){
+       var recentView =JSON.parse(localStorage.getItem(localStorage.key(i)));
+       $(".rv-item-container").append(
+           $("<img>").attr({
+                "class": "carousel-item rv-item",
+                "id": recentView.id,
+                "data-ID": recentView.id,
+                "data-title": recentView.title,
+                "src":"https://image.tmdb.org/t/p/w500/" + recentView.poster_path,
+            })
+       );
+    };
+    $(".rv-item").click(generateMovie);
 
-            )));
 //shu's code
 
     var searchBarEl = document.querySelector(".search-bar-input");
