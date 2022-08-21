@@ -90,13 +90,13 @@ function getHome(event) {
     var searchBarEl = document.querySelector(".search-bar-input");
     var searchDropdownEl = document.getElementById("search-dropdown");
 
-    searchBarEl.addEventListener("keydown", generateDropdown);
+    searchBarEl.addEventListener("keyup", generateDropdown);
 
 
     function generateDropdown() {
         var movieTitle = searchBarEl.value;
         var requestThemoviedbURL = 'https://api.themoviedb.org/3/search/movie?api_key=' + themoviedbAPIKey + '&query=' + movieTitle;
-
+console.log(requestThemoviedbURL)
         fetch(requestThemoviedbURL, {
             method: 'GET',
         })
@@ -106,7 +106,7 @@ function getHome(event) {
         .then(function (data) {
             searchDropdownEl.innerHTML = '';
             searchDropdownEl.classList.remove("hide");
-            
+            console.log(data)
             if (searchBarEl.value) {
                 for (i = 0; i < 5; i++) {
                     var dropDownItem = document.createElement("li");
@@ -146,7 +146,8 @@ function getHome(event) {
 
 
     //basically load the poster cards using stored movie_ID and randomIndex when home button is clicked.
-    getRec(movieID, event);
+    console.log(randomBank)
+    //getRec(movieID, event);
 
 }
 
@@ -159,7 +160,7 @@ function getRec(movieID, event) {
     cardDeckEl.innerHTML = '';
 
     var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey;
-
+    console.log(movieDBRecURL)
     fetch(movieDBRecURL, {
         method: 'GET',
     })
