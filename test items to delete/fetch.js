@@ -9,7 +9,8 @@ var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+th
 var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
 
 
-$('.generate-btn').click(function(){
+$('.generate-btn').click(
+    function(){
     var movieTitle=$('.search-bar-input').val().toLowerCase().split(' ').join('+');
     var requestNYTimesURL='https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key='+nyTimesAPIKey+'&query='+movieTitle;
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
