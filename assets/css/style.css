@@ -245,3 +245,8 @@ ul {
 .logo-header{
     height: 2rem;
 }
+
+#content{
+background-color: maroon;
+color:white;
+}

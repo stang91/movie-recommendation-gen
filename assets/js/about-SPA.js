@@ -10,6 +10,7 @@ function getAbout(){
                 "class": "logo"
             })
         ),
+        //aobut us  title and paragraph
         $("<div></div>").attr("class","about-container").append(
             $("<h1>About Us</h1>"),
             $("<div></div>").attr("class","about-content-container").append(
