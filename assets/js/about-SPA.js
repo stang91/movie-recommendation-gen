@@ -14,7 +14,7 @@ function getAbout(){
         $("<div></div>").attr("class","about-container").append(
             $("<h1>About Us</h1>"),
             $("<div></div>").attr("class","about-content-container").append(
-                $("<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum temporibus nemo necessitatibus rerum itaque distinctio ea molestiae amet deserunt tempore corporis, magni debitis possimus? Necessitatibus eius ullam saepe officiis laboriosam!</p>").attr("class","about-content")
+                $("<p>We are avid movies fan, but sometimes we just can’t seem to think of a good movie to watch.  So we, at Flick Genie, created a movie recommendation generator.  All you need to do is add a movie title and click the movie title in the dropdown and it will generate 4 movies recommendation.  If you don’t like the movies recommended just click the generate button once more, to get new recommendation.</p>").attr("class","about-content")
             )
         )
     );
