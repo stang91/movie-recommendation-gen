@@ -270,3 +270,7 @@ color:white;
     text-align: center;
     padding-top: 30px;
 }
+
+.about-content-container p {
+    padding: 0 10% 10% 10%;
+}
