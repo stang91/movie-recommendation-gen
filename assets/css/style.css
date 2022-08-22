@@ -90,6 +90,7 @@ a:hover {
     height: 50px;
     width: 100%;
     background-color: white;
+    color: black;
 }
 
 .drop-down-item:hover {
@@ -252,3 +253,23 @@ ul {
 background-color: maroon;
 color:white;
 }
+
+.reviews-container {
+    padding: 3% 10%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    transition: background-color 2s;
+}
+
+.reviews-container:hover {
+    background-color: rgb(165, 41, 41);
+}
+
+.center {
+    text-align: center;
+    padding-top: 30px;
+}
+/* review-authorAndRating
+
+review-contentAndUrl */

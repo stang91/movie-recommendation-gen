@@ -99,16 +99,19 @@ function generateMovie (event){
                     )
                 );
                 if (data1.reviews.results.length!=null){
+                    $("#content").append(
+                        $("<h4 class='center'>Reviews</h4>"),
+                        $("<div></div").attr("class","review-large-container"));
                     for(i=0;i<data1.reviews.results.length;i++){
                         var author=data1.reviews.results[i].author;
                         var rating=data1.reviews.results[i].author_details.rating;
                         var content=data1.reviews.results[i].content;
                         var website=data1.reviews.results[i].url;
-                        $("#content").append(
+                        $(".review-large-container").append(
                             $("<div></div>").attr("class","reviews-container").append(
                                 $("<div></div>").attr("class","review-authorAndRating").append(
-                                    $("<p>"+author+"</p>"),
-                                    $("<p>"+rating+"</p>")
+                                    $("<p>  Reviewed by: "+author+"</p>"),
+                                    $("<p>"+rating+"/10</p>")
                                 ),
                                 $("<div></div>").attr("class","review-contentAndUrl").append(
                                     $("<p>"+content+"</p>"),
@@ -147,13 +150,14 @@ function generateMovie (event){
                     })
                     .then(function (data3) {
                         if(data3.results.length!=null){
+                            
                             for(i=0;i<data3.results.length;i++){
                                 var title1=JSON.parse(localStorage.getItem('themoviedb-'+data3.results[i].display_title)).original_title;
                                 if(title1===data3.results[i].display_title){
                                     $("#content").append(
                                         $("<div></div>").attr("class","reviews-container").append(
                                             $("<div></div>").attr("class","review-authorAndRating").append(
-                                                $("<p>"+data3.results[i].byline+"</p>"),
+                                                $("<p> Reviewed by: "+data3.results[i].byline+"</p>"),
                                             ),
                                             $("<div></div>").attr("class","review-contentAndUrl").append(
                                                 $("<p>"+data3.results[i].headline+"</p>"),
