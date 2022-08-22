@@ -1,5 +1,6 @@
 var movieID;
 var randomBank = [];
+var searchBarText;
 
 function getHome(event) {
     $(document).prop("title", "Home | Flick Genie");
@@ -34,6 +35,7 @@ function getHome(event) {
                     }),
 
                     $("<label>Type in your favorite movie to generate</label>").attr({
+                        "class": "autocomplete-prompt",
                         "for": "autocomplete-input"
                     }),
                 )
@@ -103,7 +105,7 @@ function getHome(event) {
     function generateDropdown() {
         var movieTitle = searchBarEl.value;
         var requestThemoviedbURL = 'https://api.themoviedb.org/3/search/movie?api_key=' + themoviedbAPIKey + '&query=' + movieTitle;
-        // console.log(requestThemoviedbURL)
+        $(".autocomplete-prompt").removeClass("hide");
         fetch(requestThemoviedbURL, {
             method: 'GET',
         })
@@ -113,7 +115,6 @@ function getHome(event) {
             .then(function (data) {
                 searchDropdownEl.innerHTML = '';
                 searchDropdownEl.classList.remove("hide");
-                // console.log(data)
                 if (searchBarEl.value) {
                     for (i = 0; i < 5; i++) {
                         var dropDownItem = document.createElement("li");
@@ -148,14 +149,19 @@ function getHome(event) {
     function getMovieID(event) {
         movieID = event.target.parentElement.getAttribute("data-ID");
         searchDropdownEl.classList.add("hide");
-        searchBarEl.value = event.target.parentElement.getAttribute("data-title");
+        searchBarText = event.target.parentElement.getAttribute("data-title");
+        searchBarEl.value = searchBarText;
         getRec(movieID, event);
-        return movieID, event, searchBarEl.value;
+        return movieID, event, searchBarText;
     }
 
 
     //basically load the poster cards using stored movie_ID and randomIndex when home button is clicked.
-    if(movieID){getRec(movieID, event)};
+    if(movieID){
+        getRec(movieID, event);
+        searchBarEl.value = searchBarText;
+        $(".autocomplete-prompt").attr("class","hide");
+    };
 
 }
 
@@ -163,12 +169,10 @@ function getHome(event) {
 
 function getRec(movieID, event) {
 
-    // console.log(event.target.classList.contains("home-btn"))    
     var cardDeckEl = document.querySelector(".card-deck");
     cardDeckEl.innerHTML = '';
 
     var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey;
-    // console.log(movieDBRecURL)
     fetch(movieDBRecURL, {
         method: 'GET',
     })
@@ -187,7 +191,6 @@ function getRec(movieID, event) {
 
             function generateCards(data) {
                 for (i = 0; i < 4; i++) {
-                    randomBank.push(randomBank[i]);
                     var posterDisplay = document.createElement("div");
                     posterDisplay.classList.add("card-container");
                     var urlTitle = data.results[randomBank[i]].title.replaceAll(" ", "-");
