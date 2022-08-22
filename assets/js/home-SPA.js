@@ -65,17 +65,18 @@ function getHome(event) {
     //recent view
     $("#content").append(
         $("<div></div>").attr({
-            "class": "carousel recently-viewed",
+            "class": "recently-viewed",
         }).append(
             $("<h3>Recently Viewed</h3>"),
             $("<div></div>").attr("class", "rv-item-container")
         )
    );
+   //creating recent views
    for(var i=0;i<localStorage.length;i++){
        var recentView =JSON.parse(localStorage.getItem(localStorage.key(i)));
        $(".rv-item-container").append(
            $("<img>").attr({
-                "class": "carousel-item rv-item",
+                "class": "rv-item",
                 "id": recentView.id,
                 "data-ID": recentView.id,
                 "data-title": recentView.title,
@@ -85,7 +86,7 @@ function getHome(event) {
     };
     $(".rv-item").click(generateMovie);
 
-//shu's code
+    //shu's code
 
     var searchBarEl = document.querySelector(".search-bar-input");
     var searchDropdownEl = document.getElementById("search-dropdown");

@@ -4,7 +4,7 @@ function generateMovie (event){
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
-
+    //featch 
     fetch(requestThemoviedbURL, {
         method: 'GET',
     })
@@ -148,7 +148,7 @@ function generateMovie (event){
                     .then(function (data3) {
                         if(data3.results.length!=null){
                             for(i=0;i<data3.results.length;i++){
-                                var title1=JSON.parse(localStorage.getItem('themoviedb-'+data3.results[i].display_title)).title;
+                                var title1=JSON.parse(localStorage.getItem('themoviedb-'+data3.results[i].display_title)).original_title;
                                 if(title1===data3.results[i].display_title){
                                     $("#content").append(
                                         $("<div></div>").attr("class","reviews-container").append(
