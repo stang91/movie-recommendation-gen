@@ -6,12 +6,8 @@ We have created an application collaboratively called:
 Purpose:
 This application was made to be a Movie Suggestion Generator.
 It helps the user find movies that they search for through the navigation application.
-Our program uses two free API interfaces to generate the search results.
-It also contains a short About me and a Carousel at the bottom which shows the user's search history/recent findings.
-
-
-
-##Foobar
+Our program uses three free API interfaces to generate the search results.
+It also contains a short About me and a recently view at the bottom which shows the user's search history/recent findings.
 
 ##Installation
 Included in webpage.

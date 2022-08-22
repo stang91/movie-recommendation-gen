@@ -4,7 +4,7 @@ function generateMovie (event){
     var requestThemoviedbURL='https://api.themoviedb.org/3/search/movie?api_key='+themoviedbAPIKey+'&query='+movieTitle;
     var requestOmdbURL='https://omdbapi.com/?t='+movieTitle+'&apikey='+omdbAPIKey;
     
-    //featch 
+    //fetch  using movie title
     fetch(requestThemoviedbURL, {
         method: 'GET',
     })
@@ -15,6 +15,7 @@ function generateMovie (event){
         if(data0.results.length!=null){
             var movieID2=data0.results[0].id;
             var requestThemoviedbURL2="https://api.themoviedb.org/3/movie/"+movieID2+"?api_key="+themoviedbAPIKey+"&append_to_response=videos,images,credits,reviews";
+            //fetch using movie iD
             fetch(requestThemoviedbURL2, {
                 method: 'GET',
             })
@@ -24,6 +25,7 @@ function generateMovie (event){
             .then(function (data1) {
                 localStorage.setItem('themoviedb-'+movieTitle,JSON.stringify(data1));
                 var posterImg = data1.poster_path;
+                //create content
                 $(document).prop("title", data1.title + " | Flick Genie");
                 $("#content").empty();
                 $("#content").append(
@@ -57,6 +59,7 @@ function generateMovie (event){
                         )
                     )
                 );
+                //create genre
                 var genre=[];
                 if(data1.genres.length!=null){
                      for(i=0;i<data1.genres.length;i++){   
@@ -67,6 +70,7 @@ function generateMovie (event){
                 $(".detail-container").append(
                     $("<p>Genres: "+genres+"</p>").attr("class","genre")
                 );
+                //create first 5 actors/actresses
                 var actor=[];
                 if(data1.credits.cast.length!=null){
                      for(i=0;i<5;i++){   
@@ -77,6 +81,7 @@ function generateMovie (event){
                 $(".detail-container").append(
                     $("<p>Actors: "+actors+"...</p>").attr("class","actors")
                 );
+                //create video content
                 if (data1.videos.results.length!=null){
                     var video=data1.videos.results[0].key;
                 }else{return null}
@@ -98,6 +103,7 @@ function generateMovie (event){
                         )
                     )
                 );
+                //create reivews content
                 if (data1.reviews.results.length!=null){
                     $("#content").append(
                         $("<h4 class='center'>Reviews</h4>"),
@@ -121,7 +127,7 @@ function generateMovie (event){
                         );
                     }
                 }else{return null}
-                
+                //fetch second API and get rating Scores and film rated
                 fetch(requestOmdbURL, {
                     method: 'GET',
                 })
@@ -140,6 +146,7 @@ function generateMovie (event){
                     }else{
                         return null;
                     }
+                    //fetch third api get NY times reviews
                     var requestNYTimesURL='https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key='+nyTimesAPIKey+'&query='+movieTitle;
 
                     fetch(requestNYTimesURL, {

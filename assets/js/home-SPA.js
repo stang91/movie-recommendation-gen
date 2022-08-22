@@ -97,7 +97,7 @@ function getHome(event) {
     function generateDropdown() {
         var movieTitle = searchBarEl.value;
         var requestThemoviedbURL = 'https://api.themoviedb.org/3/search/movie?api_key=' + themoviedbAPIKey + '&query=' + movieTitle;
-console.log(requestThemoviedbURL)
+        // console.log(requestThemoviedbURL)
         fetch(requestThemoviedbURL, {
             method: 'GET',
         })
@@ -107,7 +107,7 @@ console.log(requestThemoviedbURL)
         .then(function (data) {
             searchDropdownEl.innerHTML = '';
             searchDropdownEl.classList.remove("hide");
-            console.log(data)
+            // console.log(data)
             if (searchBarEl.value) {
                 for (i = 0; i < 5; i++) {
                     var dropDownItem = document.createElement("li");
