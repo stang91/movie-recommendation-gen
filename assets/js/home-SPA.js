@@ -117,6 +117,7 @@ console.log(requestThemoviedbURL)
                 
                     var title = document.createElement("p");
                     title.textContent = data.results[i].original_title;
+                    
                 
                     var releaseDate = document.createElement("p");
                     releaseDate.textContent = data.results[i].release_date.substring(0, 4);
@@ -147,8 +148,7 @@ console.log(requestThemoviedbURL)
 
 
     //basically load the poster cards using stored movie_ID and randomIndex when home button is clicked.
-    console.log(randomBank)
-    //getRec(movieID, event);
+    getRec(movieID, event);
 
 }
 
@@ -161,7 +161,7 @@ function getRec(movieID, event) {
     cardDeckEl.innerHTML = '';
 
     var movieDBRecURL = "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=" + themoviedbAPIKey;
-    console.log(movieDBRecURL)
+    // console.log(movieDBRecURL)
     fetch(movieDBRecURL, {
         method: 'GET',
     })
