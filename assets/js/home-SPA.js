@@ -141,7 +141,7 @@ function getHome(event) {
     function getMovieID(event) {
         movieID = event.target.parentElement.getAttribute("data-ID");
         searchDropdownEl.classList.add("hide");
-        searchBarEl.value = event.target.parentElement.getAttribute("data-title")
+        searchBarEl.value = event.target.parentElement.getAttribute("data-title");
         getRec(movieID, event);
         return movieID, event, searchBarEl.value;
     }
@@ -181,9 +181,9 @@ function getRec(movieID, event) {
             randomBank.push(randomBank[i]);
             var posterDisplay = document.createElement("div");
             posterDisplay.classList.add("card-container");
-            posterDisplay.innerHTML = "<img class='card-image' data-title='" + data.results[randomBank[i]].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomBank[i]].poster_path + "> <p class='card-text'>" + data.results[randomBank[i]].title + "<p>"
-            posterDisplay.setAttribute("data-ID", data.results[randomBank[i]].id)
-            posterDisplay.setAttribute("data-title", data.results[randomBank[i]].title)
+            posterDisplay.innerHTML = "<img class='card-image' data-title='" + data.results[randomBank[i]].title + "' src=https://image.tmdb.org/t/p/w500" + data.results[randomBank[i]].poster_path + "> <p class='card-text'>" + data.results[randomBank[i]].title + "<p>";
+            posterDisplay.setAttribute("data-ID", data.results[randomBank[i]].id);
+            posterDisplay.setAttribute("data-title", data.results[randomBank[i]].title);
             cardDeckEl.append(posterDisplay);
 
             posterDisplay.addEventListener("click", generateMovie);
