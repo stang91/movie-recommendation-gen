@@ -76,10 +76,12 @@ a:hover {
     width: 100%;
 }
 
+
 .drop-down {
     position: absolute;
     top: 400px;
     width: 100%;
+    z-index: 1;
 }
 
 .drop-down-item {
